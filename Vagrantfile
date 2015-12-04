@@ -1,7 +1,7 @@
 $bootstrap = <<SCRIPT
 echo "installing ..." && \
 sudo apt-get update && \
-sudo apt-get -y install build-essential git curl
+sudo apt-get -y install build-essential git curl nodejs
 SCRIPT
 
 Vagrant::Config.run do |config|
