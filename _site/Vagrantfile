@@ -4,10 +4,10 @@ sudo apt-get update && \
 sudo apt-get -y install build-essential git curl nodejs
 SCRIPT
 
-Vagrant.configure(2) do |config|
+Vagrant::Config.run do |config|
 
   config.vm.box = "hashicorp/precise64"
-  config.vm.network "private_network", type: "dhcp"
+  config.vm.forward_port 8124, 8124
   config.vm.provision :shell,
     :inline => $bootstrap,
     :name => "Packages"
