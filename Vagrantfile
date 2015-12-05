@@ -1,8 +1,7 @@
 $bootstrap = <<SCRIPT
 echo "installing essentials, nodejs and npm ..." && \
 sudo apt-get update && \
-sudo apt-get -y install build-essential git curl nodejs npm software-properties-common && \
-sudo ln -s /usr/bin/nodejs /usr/bin/node
+sudo apt-get -y install build-essential git curl nodejs npm software-properties-common
 SCRIPT
 
 $php = <<SCRIPT
@@ -12,8 +11,13 @@ sudo apt-get update && apt-get install -y --force-yes php7.0 php7.0-cli
 SCRIPT
 
 $bower = <<SCRIPT
-echo "installing bower ..." && \
-sudo npm install -g bower
+echo "installing gulp and bower ..."
+
+if [ ! -e /usr/bin/node ];
+  then sudo ln -s /usr/bin/nodejs /usr/bin/node
+fi
+
+sudo npm install -g bower gulp
 SCRIPT
 
 Vagrant.configure(2) do |config|
@@ -34,9 +38,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision "php", type: "shell",
     :inline => $php,
     :name => "php"
-  config.vm.provision "bower", type: "shell",
+  config.vm.provision "gulp and bower", type: "shell",
     :inline => $bower,
-    :name => "bower"
+    :name => "gulp and bower"
 
   config.ssh.forward_agent = true
 end
