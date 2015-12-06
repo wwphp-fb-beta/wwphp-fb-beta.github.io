@@ -10,6 +10,11 @@ defaults:
       origin: main
 
   - scope:
+      path: "/rules.html"
+    values:
+      origin: rules
+
+  - scope:
       path: "/faq"
     values:
       origin: faq

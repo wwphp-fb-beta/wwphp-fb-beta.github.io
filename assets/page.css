@@ -4,7 +4,7 @@ body
   color: #fff;
 
   font-family: "Roboto", sans-serif !important;
-  padding-top 50px;
+  font-weight: 100;
 }
 
 .top-bar .main-logo
@@ -64,6 +64,38 @@ body
 
 .general-content
 {
+  padding-top: 62px !important;
   min-height: 600px;
   background-color: #333;
+  font-weight: 400 !important;
+}
+
+.general-content .breadcrumb
+{
+  background-color: transparent !important;
+  color: white !important;
+  margin-bottom: 2em !important;
+}
+
+.general-content .breadcrumb i.divider
+{
+  color: #eee !important;
+}
+
+.general-content .content-column
+{
+  background-color: white !important;
+  color: black !important;
+}
+
+.general-content .content-column .content
+{
+  padding-top: .5em;
+  padding-bottom: .5em;
+  text-align: justify !important;
+}
+
+.spaced
+{
+  margin-bottom: .6em !important;
 }
