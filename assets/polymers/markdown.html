@@ -1,0 +1,20 @@
+<link rel="import" href="/assets/components/polymer/polymer.html">
+
+<dom-module id="ui-ribbon">
+  <template>
+    <div class$="ui {{color}} ribbon spaced label">
+      <content></content>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      is: "ui-ribbon",
+      properties: {
+        color: {
+          type: String,
+          value: "black"
+        }
+      }
+    });
+  </script>
+</dom-module>
