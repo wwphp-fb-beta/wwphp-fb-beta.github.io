@@ -6,8 +6,9 @@ SCRIPT
 
 $php = <<SCRIPT
 echo "installing PHP ..." && \
-sudo add-apt-repository "deb http://packages.dotdeb.org jessie all" && \
-sudo apt-get update && apt-get install -y --force-yes php7.0 php7.0-cli
+apt-get install python-software-properties && \
+sudo add-apt-repository ppa:ondrej/php-7.0 && \
+apt-get update && apt-get -y --force-yes install php7.0 php7.0-cli php7.0-mysql
 SCRIPT
 
 $bower = <<SCRIPT
@@ -22,7 +23,7 @@ SCRIPT
 
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "debian/jessie64"
+  config.vm.box = "ubuntu/trusty64"
   config.vm.network "private_network", type: "dhcp"
   config.vm.provision "bootstrap", type: "shell",
     :inline => $bootstrap,

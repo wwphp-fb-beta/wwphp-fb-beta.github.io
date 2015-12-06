@@ -1,0 +1,69 @@
+body
+{
+  background: #8892BF;
+  color: #fff;
+
+  font-family: "Roboto", sans-serif !important;
+  padding-top 50px;
+}
+
+.top-bar .main-logo
+{
+  font-family: "Roboto" !important;
+  font-style: italic !important;
+}
+
+.top-bar .main-logo span.upper
+{
+  font-weight: 900 !important;
+  font-size: 18pt !important;
+  height: 18pt;
+}
+
+.top-bar .main-logo span.lower
+{
+  font-weight: 100 !important;
+  font-size: 10pt !important;
+  height: 18pt;
+  line-height: 2.5;
+  margin-left: 8px;
+}
+
+.top-bar
+{
+  background-color: #8892BF !important;
+  border-bottom-color: rgb(79, 91, 147) !important;
+  border-width: 2px;
+}
+
+.top-bar .menu .item
+{
+  font-family: "Roboto";
+  color: #ddd !important;
+}
+
+.top-bar .menu .item:not(.main-logo)
+{
+  font-weight: 100;
+}
+
+.top-bar .menu .item:not(.active):hover
+{
+  color: #fff !important;
+  border-bottom-color: white !important;
+}
+
+.top-bar .menu .item.active
+{
+  background-color: #333 !important;
+  border-left: 2px solid rgb(79, 91, 147) !important;
+  border-right: 2px solid rgb(79, 91, 147) !important;
+  border-top: 2px solid rgb(79, 91, 147) !important;
+  border-bottom-color: #333 !important;
+}
+
+.general-content
+{
+  min-height: 600px;
+  background-color: #333;
+}

@@ -1,2 +1,39 @@
 ---
-exclude: [ "README.md", "Vagrantfile" ]
+
+# presets
+
+defaults:
+
+  - scope:
+      path: ""
+    values:
+      origin: main
+
+  - scope:
+      path: "/faq"
+    values:
+      origin: faq
+
+  - scope:
+      path: "/articles"
+    values:
+      origin: articles
+
+# maintenance
+
+exclude:
+
+  - README.md
+  - Vagrantfile
+  - assets/semantic-ui/gulpfile.js
+  - assets/semantic-ui/src/
+  - assets/semantic-ui/tasks/
+  - assets/components/jquery/src/
+  - assets/components/jquery/.bower.json
+  - assets/components/jquery/bower.json
+  - assets/components/jquery/MIT-LICENSE.txt
+  - node_modules/
+
+markdown: redcarpet
+redcarpet:
+    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
