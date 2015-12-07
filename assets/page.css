@@ -82,6 +82,11 @@ body
   color: #eee !important;
 }
 
+.general-content .breadcrumb a
+{
+  color: #8892BF !important;
+}
+
 .general-content .content-column
 {
   background-color: white !important;
@@ -132,6 +137,21 @@ body
   padding-top: .5em;
   padding-bottom: .5em;
   text-align: justify !important;
+}
+
+footer
+{
+  color: black !important;
+}
+
+a
+{
+  color: rgb(79, 91, 147) !important;
+}
+
+a:hover
+{
+  text-decoration: underline;
 }
 
 .spaced

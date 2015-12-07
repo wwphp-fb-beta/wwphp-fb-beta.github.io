@@ -16,13 +16,16 @@
     <div class="ui secondary pointing top fixed menu top-bar">
       <div class="ui container">
         <div class="item main-logo">
-          <span class="upper"><span style="color:#555 !important">ww</span>php</span>
+          <span class="upper">&lt;?<span style="color:#555 !important">ww</span>php</span>
           <span class="lower"> knowledge shared properly</span>
         </div>
 
         <div class="right menu">
           <a class="item{% if page.origin == 'main' %} active{% endif %}" href="/">
             <i class="home icon" style="margin-right: 0 !important"></i>
+          </a>
+          <a class="item{% if page.origin == 'staff' %} active{% endif %}" href="/staff.html">
+            <i class="users icon" style="margin-right: 0 !important"></i>
           </a>
           <a class="item{% if page.origin == 'rules' %} active{% endif %}" href="/rules.html">
             Code of Conduct
@@ -56,7 +59,10 @@
       </div>
     </div>
     <footer class="ui container" style="margin-top: 1em !important; font-weight: 100; color: black; min-height: 60px !important">
-        <p>&copy; 2015 Team Awesome of the international PHP Facebook Group</p>
+        <p>
+          &copy; 2012-{{ 'now' | date: "%Y" }} Team Awesome of the international PHP Facebook Group<br />
+          &copy; 2001-{{ 'now' | date: "%Y" }} PHP is a registrated trademark of <a href="http://php.net">The PHP Group</a>.
+        </p>
     </footer>
     <script src="/assets/components/jquery/dist/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>

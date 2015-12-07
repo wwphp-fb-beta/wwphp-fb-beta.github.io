@@ -25,6 +25,12 @@ defaults:
     values:
       origin: articles
 
+# collections
+
+collections:
+  - faq
+
+
 # maintenance
 
 exclude:
