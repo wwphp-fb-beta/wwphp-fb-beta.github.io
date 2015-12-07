@@ -7,4 +7,39 @@ layout: general
       {{ content }}
     </div>
   </div>
+  <div class="four wide column widget-column">
+    <div class="embedded-widget">
+      <div class="ui relaxed list">
+        <div class="item">
+          <i class="large clock middle aligned icon"></i>
+          <div class="content">
+            <div class="header">Assimilation done in</div>
+            <div class="description">{{ page.read_time }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if page.toc %}
+    <div class="widget">
+      <p>Table of Contents</p>
+      <div class="ui ordered list">
+        {% for item in page.toc %}
+        <div class="item">
+            <a href="{% if item.anchor %}#{{ item.anchor }}{% else %}{{ item.url }}{% endif %}">{{ item.name }}</a>
+            {% if item.items %}
+            <div class="list">
+              {% for inner in item.items %}
+              <div class="item">
+                <a href="{% if inner.anchor %}#{{ inner.anchor }}{% else %}{{ inner.url }}{% endif %}">{{ inner.name }}</a
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+    {% endif %}
+  </div>
 </div>

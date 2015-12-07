@@ -8,6 +8,7 @@ defaults:
       path: ""
     values:
       origin: main
+      read_time: 1 min
 
   - scope:
       path: "/rules.html"
