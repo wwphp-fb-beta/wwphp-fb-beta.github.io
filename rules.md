@@ -5,6 +5,7 @@ origin: "rules"
 og_image: "assets/img/rules-large.png"
 read_time: 2 min 30 secs
 php: null
+compass: null
 
 toc:
   - name  : Preamble
