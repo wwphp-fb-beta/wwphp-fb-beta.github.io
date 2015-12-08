@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,400italic,200,200italic,100,100italic" type="text/css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css">
     <link rel="stylesheet" href="/assets/page.css">
 
     <script src="/assets/components/webcomponentsjs/webcomponents-lite.min.js"></script>
@@ -30,16 +30,16 @@
           <a class="item{% if page.origin == 'rules' %} active{% endif %}" href="/rules.html">
             Code of Conduct
           </a>
-          <a class="item" href="/articles">
+          <a class="item{% if page.origin == 'article' %} active{% endif %}" href="/articles">
             Knowledge Base
           </a>
-          <a class="item" href="/faq">
+          <a class="item{% if page.origin == 'faq' %} active{% endif %}" href="/faq">
             FAQ
           </a>
-          <a class="item" href="/best-practice">
+          <a class="item{% if page.origin == 'best-practice' %} active{% endif %}" href="/best-practice">
             Best Practices
           </a>
-          <a class="ui button item" href="/php-guide">
+          <a class="ui item{% if page.origin == 'php-guide' %} active{% endif %}" href="/php-guide">
             Getting started
           </a>
         </div>
@@ -51,6 +51,14 @@
         {% if page.origin != 'main' %}
           <div class="ui breadcrumb">
             <a class="section" href="/">wwphp</a>
+            {% if 'faq' contains page.origin %}
+            <i class="right chevron icon divider"></i>
+            <span class="section">{{ page.origin }}</span>
+            {% if page.group and page.origin == 'faq' %}
+            <i class="right chevron icon divider"></i>
+            <span class="section">{{ page.group }}</span>
+            {% endif %}
+            {% endif %}
             <i class="right chevron icon divider"></i>
             <span class="section">{{ page.title }}</span>
           </div>
@@ -66,5 +74,11 @@
     </footer>
     <script src="/assets/components/jquery/dist/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+    <script>
+      $("table:not([class])").addClass('ui table');
+      $("ul:not([class])").addClass('ui list');
+      $('img:not([class])').addClass('ui fluid image');
+    </script>
   </body>
 </html>

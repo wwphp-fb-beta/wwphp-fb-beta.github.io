@@ -154,6 +154,10 @@ a:hover
   text-decoration: underline;
 }
 
+.highlight pre code {
+  overflow: visible !important;
+}
+
 .spaced
 {
   margin-bottom: .6em !important;

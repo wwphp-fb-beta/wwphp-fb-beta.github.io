@@ -16,9 +16,11 @@ defaults:
       origin: rules
 
   - scope:
-      path: "/faq"
+      path: ""
+      collection: faq
     values:
       origin: faq
+      layout: default
 
   - scope:
       path: "/articles"
@@ -28,7 +30,10 @@ defaults:
 # collections
 
 collections:
-  - faq
+  faq:
+    output: true
+    output_ext: html
+    permalink: /:path/
 
 
 # maintenance
@@ -45,6 +50,7 @@ exclude:
   - assets/components/jquery/bower.json
   - assets/components/jquery/MIT-LICENSE.txt
   - node_modules/
+  - semantic.json
 
 markdown: redcarpet
 redcarpet:

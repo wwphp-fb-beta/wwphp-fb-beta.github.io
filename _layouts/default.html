@@ -43,35 +43,37 @@ layout: general
     {% if page.compass %}
     <div class="embedded-widget">
       <div class="ui relaxed divided list">
-        {% if page.compass.up %}
+        {% if page.compass.next %}
         <div class="item">
-          <i class="large anglet double up middle aligned icon"></i>
-          <div class="content">
-            <a class="header" href="{{ page.compass.up.path }}">{{ page.compass.up.title }}</a>
-            {% if page.compass.up.info %}
-            <div class="description">{{ page.compass.up.info }}</div>
+          <i class="large angle double right middle aligned icon"></i>
+          <div class="content" data-foo="{{ page.compass.next }}">
+            {% if page.compass.next.title and page.compass.next.path %}
+            <a class="header" href="{{ page.compass.next.path }}">{{ page.compass.next.title }}</a>
+            {% else %}
+            {% for item in site.collections.faq.docs %}{% if item.permalink == page.compass.next %}<a class="header" href="{{ item.permalink }}">{{ item.title }}</a><div class="description">{{ item.group}}</div>{% endif %}{% endfor %}
             {% endif %}
           </div>
         </div>
         {% endif %}
         {% if page.compass.prev %}
         <div class="item">
-          <i class="large anglet double left middle aligned icon"></i>
-          <div class="content">
+          <i class="large angle double left middle aligned icon"></i>
+          <div class="content" data-foo="{{ page.compass.prev }}">
+            {% if page.compass.prev.title and page.compass.prev.path %}
             <a class="header" href="{{ page.compass.prev.path }}">{{ page.compass.prev.title }}</a>
-            {% if page.compass.prev.info %}
-            <div class="description">{{ page.compass.prev.info }}</div>
+            {% else %}
+            {% for item in site.collections.faq.docs %}{% if item.permalink == page.compass.prev %}<a class="header" href="{{ item.permalink }}">{{ item.title }}</a><div class="description">{{ item.group}}</div>{% endif %}{% endfor %}
             {% endif %}
           </div>
         </div>
         {% endif %}
-        {% if page.compass.next %}
+        {% if page.compass.up %}
         <div class="item">
-          <i class="large anglet double right middle aligned icon"></i>
+          <i class="large angle double up middle aligned icon"></i>
           <div class="content">
-            <a class="header" href="{{ page.compass.up.path }}">{{ page.compass.next.title }}</a>
-            {% if page.compass.next.info %}
-            <div class="description">{{ page.compass.next.info }}</div>
+            <a class="header" href="{{ page.compass.up.path }}">{{ page.compass.up.title }}</a>
+            {% if page.compass.up.info %}
+            <div class="description">{{ page.compass.up.info }}</div>
             {% endif %}
           </div>
         </div>
