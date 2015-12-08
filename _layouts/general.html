@@ -79,6 +79,9 @@
       $("table:not([class])").addClass('ui table');
       $("ul:not([class])").addClass('ui list');
       $('img:not([class])').addClass('ui fluid image');
+      $('h2:not([class]), h3:not([class])').each(function() {
+        $(this).replaceWith('<ui-ribbon color="grey">' + $(this).html() + '</ui-ribbon>');
+      });
 
       $('.ui.accordion').accordion({exclusive: false});
     </script>

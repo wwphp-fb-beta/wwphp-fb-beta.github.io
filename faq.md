@@ -2,6 +2,7 @@
 title: "Frequently Asked Questions"
 origin: "faq"
 php: null
+compass: null
 read_time: null
 permalink: /faq/
 
