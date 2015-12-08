@@ -22,6 +22,11 @@ defaults:
     values:
       origin: faq
       layout: default
+      compass:
+        up:
+          title: "FAQ"
+          path: /faq
+          info: "Overview"
 
   - scope:
       path: "/articles"
