@@ -21,6 +21,14 @@ fi
 sudo npm install -g bower gulp
 SCRIPT
 
+$builder = <<SCRIPT
+echo "installing builder to home directory"
+
+if [ ! -e ~/github-page-builder ];
+  then cd ~ && git clone https://github.com/wwphp-fb/github-page-builder.git
+fi
+SCRIPT
+
 Vagrant.configure(2) do |config|
 
   config.vm.box = "ubuntu/trusty64"
@@ -42,6 +50,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision "gulp and bower", type: "shell",
     :inline => $bower,
     :name => "gulp and bower"
+  config.vm.provision "github page builder", type: "shell",
+    :inline => $builder,
+    :name => "github page builder"
 
   config.ssh.forward_agent = true
 end
