@@ -24,9 +24,11 @@ SCRIPT
 $builder = <<SCRIPT
 echo "installing builder to home directory"
 
-if [ ! -e ~/github-page-builder ];
-  then cd ~ && git clone https://github.com/wwphp-fb/github-page-builder.git
+if [ ! -e /var/wwphp-fb/builder ];
+  then cd ~ && git clone https://github.com/wwphp-fb/github-page-builder.git /var/wwphp-fb/builder
+  else cd /var/wwphp-fb/builder && git pull
 fi
+
 SCRIPT
 
 Vagrant.configure(2) do |config|
