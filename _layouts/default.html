@@ -4,10 +4,14 @@ layout: general
 <div class="ui grid" style="margin-bottom: 1em">
   <div class="twelve wide column content-column">
     <div class="content">
+      {% if page.php != null %}
+      <div class="ui top right attached small label" style="border-top-right-radius: 0 !important; background-color: #8892BF !important; color: white !important">Intended for PHP {{ page.php }}+</div>
+      {% endif %}
       {{ content }}
     </div>
   </div>
   <div class="four wide column widget-column">
+    {% if page.read_time != null %}
     <div class="embedded-widget">
       <div class="ui relaxed list">
         <div class="item">
@@ -19,6 +23,7 @@ layout: general
         </div>
       </div>
     </div>
+    {% endif %}
     {% if page.toc %}
     <div class="widget">
       <p>Table of Contents</p>

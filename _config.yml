@@ -9,6 +9,7 @@ defaults:
     values:
       origin: main
       read_time: 1 min
+      php: "5.5"
 
   - scope:
       path: "/rules.html"

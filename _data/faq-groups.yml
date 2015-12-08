@@ -1,0 +1,11 @@
+---
+intro: "Introduction to PHP"
+community: "PHP Community"
+databases: "Databases and PHP"
+security: "Security and PHP"
+testing: "Testing and Code Quality"
+packages: "Packages and Dependencies"
+frameworks: "PHP Frameworks"
+api: "Application Programming Interfaces"
+oop: "Object-orientated Programming"
+general: "General"

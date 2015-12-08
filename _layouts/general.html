@@ -53,10 +53,10 @@
             <a class="section" href="/">wwphp</a>
             {% if 'faq' contains page.origin %}
             <i class="right chevron icon divider"></i>
-            <span class="section">{{ page.origin }}</span>
+            <a class="section" href="/{{ page.origin }}">{{ page.origin }}</a>
             {% if page.group and page.origin == 'faq' %}
             <i class="right chevron icon divider"></i>
-            <span class="section">{{ page.group }}</span>
+            <a class="section" href="/faq/#{{ page.group }}">{{ page.group }}</a>
             {% endif %}
             {% endif %}
             <i class="right chevron icon divider"></i>
@@ -79,6 +79,8 @@
       $("table:not([class])").addClass('ui table');
       $("ul:not([class])").addClass('ui list');
       $('img:not([class])').addClass('ui fluid image');
+
+      $('.ui.accordion').accordion({exclusive: false});
     </script>
   </body>
 </html>
